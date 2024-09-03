@@ -1,5 +1,7 @@
 <script setup>
+import { ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
+const isHovered = ref(false)
 import HelloWorld from './components/HelloWorld.vue'
 </script>
 
@@ -13,6 +15,13 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/contact-us">Contact Us</RouterLink>
+        <button
+          @mouseover="isHovered = true"
+          @mouseleave="isHovered = false"
+          :class="{ 'button-hover': isHovered }"
+        >
+          Get Demo
+        </button>
       </nav>
     </header>
     <RouterView />
@@ -52,6 +61,20 @@ nav a {
   display: inline-block;
   padding: 0 1rem;
   border-left: 1px solid var(--color-border);
+}
+
+.button-hover {
+  background-color: white;
+}
+
+button {
+  background-color: lightskyblue;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
 }
 </style>
 
