@@ -1,13 +1,3 @@
-<!-- <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
-</script>
-
-<template>
-  <main>
-    <TheWelcome />
-  </main>
-</template> -->
-
 <script setup>
 import { ref } from 'vue'
 const isHovered = ref(false)
@@ -64,9 +54,21 @@ const isHovered = ref(false)
   </div>
   <div>
     <section class="list-2">
-      <div class="item-2">Sample</div>
-      <div class="item-2">Sample</div>
-      <div class="item-2">Sample</div>
+      <div class="item-2">
+        <img src="../assets/download-1.png" width="80px" height="80px" />
+        <h2>5</h2>
+        <div>Continents</div>
+      </div>
+      <div class="item-2">
+        <img src="../assets/speedometer-1.png" width="80px" height="80px" />
+        <h2>20,00,000</h2>
+        <div>SQ. METRES MONITORED</div>
+      </div>
+      <div class="item-2">
+        <img src="../assets/sensor-3.png" width="80px" height="80px" />
+        <h2>2000</h2>
+        <div>ACCIDENTS PREVENTED</div>
+      </div>
     </section>
   </div>
 </template>
@@ -102,6 +104,7 @@ button {
   flex-direction: row;
   justify-content: center;
   margin-top: 100px;
+  gap: 200px;
 }
 
 .item {
@@ -109,7 +112,9 @@ button {
 }
 
 .item-2 {
-  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media (min-width: 1024px) {
